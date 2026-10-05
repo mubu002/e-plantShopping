@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-
-
 import './ProductList.css'
-
-
-
 import CartItem from './CartItem';
-
-
-
 import { addItem } from './CartSlice';
-
-
-
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -781,15 +769,11 @@ function ProductList({ onHomeClick }) {
 
 
                                         <button
-
                                             className="product-button"
-
                                             onClick={() => handleAddToCart(plant)}
-
-                                        >
-
-                                            Add to Cart
-
+                                            disabled={addedToCart[plant.name]}
+                                            >
+                                            {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
                                         </button>
 
 
